@@ -1,14 +1,23 @@
 provider "aws" {
-  version    = "3.36.0"
+  version    = "3.1.0"
   region     = "ap-south-1"
+  access_key = "AKIAQ64KTJQLCE4RP75D"
+  secret_key = "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"
 }
 
-resource "aws_instance" "naveed_server" {
-  ami           = "ami-0b84c6433cdbe5c3e"
-  instance_type = "t2.micro"
+resource "random_id" "name_suffix" {
+  byte_length = 4
+}
+
+resource "aws_s3_bucket" "naveed" {
+
+  bucket = "naveed96"
+  acl = "private"
 
   tags = {
-     Name = "Sample Application"
+     Name = "My Application"
  }
-
+ versioning{
+      enabled = true
+ }
 }
