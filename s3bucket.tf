@@ -4,7 +4,7 @@ resource "random_id" "name_suffix" {
 
 resource "aws_s3_bucket" "naveed" {
 
-  bucket = "naveed96"
+  bucket = "naveed1996"
   acl = "private"
 
   tags = {
